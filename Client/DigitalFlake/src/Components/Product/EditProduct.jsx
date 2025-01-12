@@ -23,7 +23,7 @@ const EditProduct = () => {
   const getProduct = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/product/product/${params.id}`
+        `https://inventory-management-backend-7bv0.onrender.com/api/product/product/${params.id}`
       );
 
       const data = response?.data?.getP;
@@ -60,7 +60,7 @@ const EditProduct = () => {
     const { name, imageUrl, status, subcategoryId, categoryId } = update;
     try {
       const response = await axios.put(
-        `http://localhost:8080/api/product/update/${params.id}`,
+        `https://inventory-management-backend-7bv0.onrender.com/api/product/update/${params.id}`,
         {
           name,
           imageUrl,

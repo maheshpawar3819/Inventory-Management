@@ -47,7 +47,7 @@ const AddProduct = () => {
     const { name, imageUrl, status, subcategoryId, categoryId } = product;
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/product/create`,
+        `https://inventory-management-backend-7bv0.onrender.com/api/product/create`,
         { name, imageUrl, status, subcategoryId, categoryId }
       );
 

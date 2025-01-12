@@ -22,7 +22,7 @@ const EditSubCategory = () => {
   const getSubCategory = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/subcategory/subcategory/${params.id}`
+        `https://inventory-management-backend-7bv0.onrender.com/api/subcategory/subcategory/${params.id}`
       );
       const data = response?.data?.get;
 
@@ -60,7 +60,7 @@ const EditSubCategory = () => {
     const { name, imageUrl, status, categoryId } = data;
     try {
       const response = await axios.put(
-        `http://localhost:8080/api/subcategory/update/${params.id}`,
+        `https://inventory-management-backend-7bv0.onrender.com/api/subcategory/update/${params.id}`,
         { name, imageUrl, status, categoryId }
       );
       if (response.status >= 200) {

@@ -9,7 +9,7 @@ const useGetCategory = () => {
   const getCategory = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/categories/categories`
+        `https://inventory-management-backend-7bv0.onrender.com/api/categories/categories`
       );
 
       dispatch(getCategories(response?.data));
@@ -21,7 +21,7 @@ const useGetCategory = () => {
   const deleteCategory = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/api/categories/categories/${id}`
+        `https://inventory-management-backend-7bv0.onrender.com/api/categories/categories/${id}`
       );
       console.log(response);
       if (response.statusText === "OK") {

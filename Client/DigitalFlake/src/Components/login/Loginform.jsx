@@ -28,7 +28,7 @@ const Loginform = () => {
     const { email, password } = user;
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/auth/login`,
+        `https://inventory-management-backend-7bv0.onrender.com/api/auth/login`,
         {
           email,
           password,

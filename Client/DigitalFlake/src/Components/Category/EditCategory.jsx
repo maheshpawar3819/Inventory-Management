@@ -17,7 +17,7 @@ const EditCategory = () => {
   const getCategory = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/categories/category/${params.id}`
+        `https://inventory-management-backend-7bv0.onrender.com/api/categories/category/${params.id}`
       );
       const data = response?.data?.category;
       console.log(data);

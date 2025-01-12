@@ -27,7 +27,7 @@ const AddCategory = () => {
     const { name, imageUrl, status } = category;
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/categories/categories",
+        "https://inventory-management-backend-7bv0.onrender.com/api/categories/categories",
         {
           name,
           imageUrl,

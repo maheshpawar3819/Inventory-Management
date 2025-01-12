@@ -9,7 +9,7 @@ const useGetProducts = () => {
   const getProducts = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/product/products`
+        `https://inventory-management-backend-7bv0.onrender.com/api/product/products`
       );
       dispatch(getProduct(response?.data));
     } catch (error) {
@@ -20,7 +20,7 @@ const useGetProducts = () => {
   const deleteProduct = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/api/product/delete/${id}`
+        `https://inventory-management-backend-7bv0.onrender.com/api/product/delete/${id}`
       );
       if (response.status >= 200) {
         toast.success(response?.data?.message);

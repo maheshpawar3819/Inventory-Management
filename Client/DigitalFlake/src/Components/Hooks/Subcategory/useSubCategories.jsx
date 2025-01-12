@@ -13,7 +13,7 @@ const useSubCategories = () => {
   const getSubCategory = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/subcategory/subcategories`
+        `https://inventory-management-backend-7bv0.onrender.com/api/subcategory/subcategories`
       );
       dispatch(getSubCateogries(response?.data?.subCategoreis));
     } catch (error) {
@@ -24,7 +24,7 @@ const useSubCategories = () => {
   const deleteSubcategory = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/api/subcategory/delete/${id}`
+        `https://inventory-management-backend-7bv0.onrender.com/api/subcategory/delete/${id}`
       );
       if (response.status >= 200) {
         toast.success(response?.data?.message);

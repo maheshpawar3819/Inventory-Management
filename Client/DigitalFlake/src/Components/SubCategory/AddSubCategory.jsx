@@ -33,7 +33,7 @@ const AddSubCategory = () => {
     const { name, imageUrl, status, categoryId } = subCategory;
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/subcategory/create`,
+        `https://inventory-management-backend-7bv0.onrender.com/api/subcategory/create`,
         { name, imageUrl, status, categoryId }
       );
 
