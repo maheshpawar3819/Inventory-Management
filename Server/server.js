@@ -11,7 +11,7 @@ const productRoute=require("./routes/productRoute");
 
 //handling cors policy
 const corsOpetions = {
-  origin: "http://localhost:5173",
+  origin: "https://inventory-management-client-8b8h.onrender.com",
   methods: "GET,POST,PUT,PATCH,DELETE,HEAD",
   credentials: true,
 };
