@@ -2,6 +2,7 @@ const { PrismaClient } = require("@prisma/client");
 const {
   PrismaClientValidationError,
 } = require("@prisma/client/runtime/library");
+const { response } = require("express");
 const prisma = new PrismaClient();
 
 //to get all categories
@@ -54,7 +55,9 @@ const createNewCategory = async (req, res, next) => {
       .status(200)
       .json({ createCategory, message: "Category added successfully" });
   } catch (error) {
-    next();
+    return res.status(501).json({
+      message:"not able to create a category"
+    })
   }
 };
 
