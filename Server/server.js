@@ -9,15 +9,9 @@ const categoryRoute = require("./routes/categoryRoute");
 const subCategoryRoute = require("./routes/subCategoryRoute");
 const productRoute=require("./routes/productRoute");
 
-//handling cors policy
-const corsOptions = {
-  origin: "https://inventory-management-orcin-zeta.vercel.app/",
-  methods: "GET,POST,PUT,PATCH,DELETE,HEAD",
-  credentials: true,
-};
 
 // middlewares
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
