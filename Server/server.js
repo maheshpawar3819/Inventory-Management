@@ -11,7 +11,7 @@ const productRoute=require("./routes/productRoute");
 
 //handling cors policy
 const corsOpetions = {
-  origin: "https://inventory-management-client-8b8h.onrender.com",
+  origin: "https://inventory-management-orcin-zeta.vercel.app/",
   methods: "GET,POST,PUT,PATCH,DELETE,HEAD",
   credentials: true,
 };
