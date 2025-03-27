@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Backend_Url } from "../../config";
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -27,14 +28,11 @@ const Register = () => {
     //destructure state variables
     const { name, email, password } = user;
     try {
-      const response = await axios.post(
-        `https://inventory-management-backend-7bv0.onrender.com/api/auth/register`,
-        {
-          name,
-          email,
-          password,
-        }
-      );
+      const response = await axios.post(`${Backend_Url}/api/auth/register`, {
+        name,
+        email,
+        password,
+      });
       console.log(response);
       if (response.status >= 200) {
         navigate("/");

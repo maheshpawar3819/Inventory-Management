@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import useGetCategory from "../Hooks/Category/useGetCategory";
 import useSubCategories from "../Hooks/Subcategory/useSubCategories";
 import { useSelector } from "react-redux";
+import { Backend_Url } from "../../config";
 
 const AddProduct = () => {
   //api call for sub category and category
@@ -47,7 +48,7 @@ const AddProduct = () => {
     const { name, imageUrl, status, subcategoryId, categoryId } = product;
     try {
       const response = await axios.post(
-        `https://inventory-management-backend-7bv0.onrender.com/api/product/create`,
+        `${Backend_Url}/api/product/create`,
         { name, imageUrl, status, subcategoryId, categoryId }
       );
 

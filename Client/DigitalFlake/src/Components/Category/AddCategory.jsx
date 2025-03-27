@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { toast } from "react-toastify";
+import { Backend_Url } from "../../config";
 
 const AddCategory = () => {
   const [category, setCategory] = useState({
@@ -27,7 +28,7 @@ const AddCategory = () => {
     const { name, imageUrl, status } = category;
     try {
       const response = await axios.post(
-        "https://inventory-management-backend-7bv0.onrender.com/api/categories/categories",
+        `${Backend_Url}/api/categories/categories`,
         {
           name,
           imageUrl,

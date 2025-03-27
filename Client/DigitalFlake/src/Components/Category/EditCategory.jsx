@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { toast } from "react-toastify";
+import { Backend_Url } from "../../config";
 
 const EditCategory = () => {
   const [data, setData] = useState({
@@ -17,7 +18,7 @@ const EditCategory = () => {
   const getCategory = async () => {
     try {
       const response = await axios.get(
-        `https://inventory-management-backend-7bv0.onrender.com/api/categories/category/${params.id}`
+        `${Backend_Url}/api/categories/category/${params.id}`
       );
       const data = response?.data?.category;
       console.log(data);
@@ -50,7 +51,7 @@ const EditCategory = () => {
     const { name, imageUrl, status } = data;
     try {
       const response = await axios.put(
-        `http://localhost:8080/api/categories/categories/${params.id}`,
+        `${Backend_Url}/api/categories/categories/${params.id}`,
         {
           name,
           imageUrl,

@@ -6,6 +6,7 @@ import {
   removeSubCategories,
 } from "../../../store/categorySlice";
 import { toast } from "react-toastify";
+import { Backend_Url } from "../../../config";
 
 const useSubCategories = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const useSubCategories = () => {
   const getSubCategory = async () => {
     try {
       const response = await axios.get(
-        `https://inventory-management-backend-7bv0.onrender.com/api/subcategory/subcategories`
+        `${Backend_Url}/api/subcategory/subcategories`
       );
       dispatch(getSubCateogries(response?.data?.subCategoreis));
     } catch (error) {
@@ -24,7 +25,7 @@ const useSubCategories = () => {
   const deleteSubcategory = async (id) => {
     try {
       const response = await axios.delete(
-        `https://inventory-management-backend-7bv0.onrender.com/api/subcategory/delete/${id}`
+        `${Backend_Url}/api/subcategory/delete/${id}`
       );
       if (response.status >= 200) {
         toast.success(response?.data?.message);

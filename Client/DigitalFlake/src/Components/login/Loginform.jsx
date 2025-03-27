@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../store/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Backend_Url } from "../../config";
 
 const Loginform = () => {
   const [user, setUser] = useState({
@@ -28,7 +29,7 @@ const Loginform = () => {
     const { email, password } = user;
     try {
       const response = await axios.post(
-        `https://inventory-management-backend-7bv0.onrender.com/api/auth/login`,
+        `${Backend_Url}/api/auth/login`,
         {
           email,
           password,

@@ -5,6 +5,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { toast } from "react-toastify";
 import useGetCategory from "../Hooks/Category/useGetCategory";
 import { useSelector } from "react-redux";
+import { Backend_Url } from "../../config";
 
 const AddSubCategory = () => {
   useGetCategory();
@@ -33,7 +34,7 @@ const AddSubCategory = () => {
     const { name, imageUrl, status, categoryId } = subCategory;
     try {
       const response = await axios.post(
-        `https://inventory-management-backend-7bv0.onrender.com/api/subcategory/create`,
+        `${Backend_Url}/api/subcategory/create`,
         { name, imageUrl, status, categoryId }
       );
 

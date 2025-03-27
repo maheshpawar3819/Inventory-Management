@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { toast } from "react-toastify";
+import { Backend_Url } from "../../config";
 
 const EditSubCategory = () => {
   const [data, setData] = useState({
@@ -22,7 +23,7 @@ const EditSubCategory = () => {
   const getSubCategory = async () => {
     try {
       const response = await axios.get(
-        `https://inventory-management-backend-7bv0.onrender.com/api/subcategory/subcategory/${params.id}`
+        `${Backend_Url}/api/subcategory/subcategory/${params.id}`
       );
       const data = response?.data?.get;
 
@@ -60,7 +61,7 @@ const EditSubCategory = () => {
     const { name, imageUrl, status, categoryId } = data;
     try {
       const response = await axios.put(
-        `https://inventory-management-backend-7bv0.onrender.com/api/subcategory/update/${params.id}`,
+        `${Backend_Url}/api/subcategory/update/${params.id}`,
         { name, imageUrl, status, categoryId }
       );
       if (response.status >= 200) {

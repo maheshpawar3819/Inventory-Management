@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { toast } from "react-toastify";
+import { Backend_Url } from "../../config";
 
 const EditProduct = () => {
   const [update, setUpdate] = useState({
@@ -23,7 +24,7 @@ const EditProduct = () => {
   const getProduct = async () => {
     try {
       const response = await axios.get(
-        `https://inventory-management-backend-7bv0.onrender.com/api/product/product/${params.id}`
+        `${Backend_Url}/api/product/product/${params.id}`
       );
 
       const data = response?.data?.getP;
@@ -60,7 +61,7 @@ const EditProduct = () => {
     const { name, imageUrl, status, subcategoryId, categoryId } = update;
     try {
       const response = await axios.put(
-        `https://inventory-management-backend-7bv0.onrender.com/api/product/update/${params.id}`,
+        `${Backend_Url}/api/product/update/${params.id}`,
         {
           name,
           imageUrl,

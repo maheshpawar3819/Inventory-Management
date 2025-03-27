@@ -3,13 +3,14 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getCategories, removeCategories } from "../../../store/categorySlice";
 import { toast } from "react-toastify";
+import { Backend_Url } from "../../../config";
 
 const useGetCategory = () => {
   const dispatch = useDispatch();
   const getCategory = async () => {
     try {
       const response = await axios.get(
-        `https://inventory-management-backend-7bv0.onrender.com/api/categories/categories`
+        `${Backend_Url}/api/categories/categories`
       );
 
       dispatch(getCategories(response?.data));
@@ -21,7 +22,7 @@ const useGetCategory = () => {
   const deleteCategory = async (id) => {
     try {
       const response = await axios.delete(
-        `https://inventory-management-backend-7bv0.onrender.com/api/categories/categories/${id}`
+        `${Backend_Url}/api/categories/categories/${id}`
       );
       console.log(response);
       if (response.statusText === "OK") {
