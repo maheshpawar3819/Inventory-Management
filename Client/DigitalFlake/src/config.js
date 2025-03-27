@@ -1,1 +1,1 @@
-export const Backend_Url="https://inventory-management-tf88.onrender.com";
+export const Backend_Url="https://inventory-management-l4j5.onrender.com";
